@@ -5,13 +5,13 @@ import "fmt"
 func searchInVector(mat [][]int, target, index int) bool {
 	dim := len(mat[index])
 	left := 0
-	right := dim
-	for left < right {
+	right := dim-1
+	for left <= right {
 		mid := (left + right) / 2
 		if mat[index][mid] == target {
 			return true
 		} else if mat[index][mid] > target {
-			right = mid-1
+			right = mid - 1
 		} else if mat[index][mid] < target {
 			left = mid + 1
 		}
@@ -30,8 +30,8 @@ func searchMatrix(matrix [][]int, target int) bool {
 	}
 	
 	up := 0
-	down := dimX
-	for up < down {
+	down := dimX-1
+	for up <= down {
 		mid := (down + up)/2
 		if matrix[mid][0] == target {
 			return true
