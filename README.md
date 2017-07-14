@@ -1,7 +1,6 @@
 ## Leetcode Solutions
 
-> 很菜很咸鱼
+* Progress:[170/630]
+* No Licence
 
-#### Unsolved
 
-* Problem 315
