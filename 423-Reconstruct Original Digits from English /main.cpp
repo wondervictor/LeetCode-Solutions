@@ -16,6 +16,7 @@ public:
                 count[i] = 1;
             }
         }
+
         vector<int> nums;
         // 2 - two - w
         while(count['w'] > 0) {
@@ -99,6 +100,7 @@ public:
             count['e'] --;
             nums.push_back(3);
         }
+
 
         sort(nums.begin(), nums.end());
         string result;
