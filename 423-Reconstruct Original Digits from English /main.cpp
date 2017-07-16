@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-    string originalDigits(string s) {
+    string originalDigits1(string s) {
 
         map<char, int> count;
         for (auto i: s) {
@@ -16,7 +16,6 @@ public:
                 count[i] = 1;
             }
         }
-
         vector<int> nums;
         // 2 - two - w
         while(count['w'] > 0) {
@@ -106,6 +105,56 @@ public:
         string result;
         for(auto i: nums) {
             result.push_back((char)(i+'0'));
+        }
+        return result;
+    }
+
+    // z 0
+    // e 0 1 3 3 5 7 7 8 9
+    // r 0 3 4
+    // o 0 1 2 4
+    // n 1 7 9 9
+    // t 2 3 8
+    // w 2
+    // h 3 8
+    // f 4 5
+    // u 4
+    // i 5 6 8 9
+    // v 5 7
+    // s 6 7
+    // x 6
+    // g 8
+
+    string originalDigits(string s) {
+        vector<int> nums(10,0);
+        for(auto i: s) {
+            switch(i) {
+                case 'z': nums[0] ++;break;
+                case 'w': nums[2] ++;break;
+                case 'g': nums[8] ++;break;
+                case 'x': nums[6] ++;break;
+                case 'u': nums[4] ++;break;
+                case 'i': nums[9] ++;break;
+                case 'h': nums[3] ++;break;
+                case 'o': nums[1] ++;break;
+                case 's': nums[7] ++;break;
+                case 'f': nums[5] ++;break;
+                default:break;
+            }
+        }
+
+        nums[3] -= nums[8];
+        nums[7] -= nums[6];
+        nums[5] -= nums[4];
+        nums[1] -= nums[0] + nums[2] + nums[4];
+        nums[9] -= nums[5] + nums[6] + nums[8];
+
+        string result;
+        for(int i = 0; i < 10; i ++) {
+            cout<<nums[i]<<"\n";
+            for(int j = 0; j < nums[i]; j ++) {
+                result.push_back((char)(i + '0'));
+            }
         }
         return result;
     }
