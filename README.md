@@ -1,6 +1,6 @@
 ## Leetcode Solutions
 
-* Progress:[251/630]
+* Progress:[253/1142]
 * Langs: [ C | C++ | Golang | Python | Swift ]
 * No Licence
 
